@@ -7,10 +7,10 @@ Water Softener Project
   
   The Program uses 2 x VL53 Lidar sensors to measure the distance in a salt block water softener.
   Utilises TPL5110, ATtiny13a, ESP32, NPN & PNP Mosfets, INA219 for onboard testing only.
-  ESP32 will hold its own power supply on, until auto power off.
+  ESP32 will hold its own power supply on, until self power down (determined by ESP32).
   
-  TPL5110 35nA standby mode, wakes every 2 hours, wakes the ATtiny13a and checks a counter
-  counter is stored in NV memory and in my case at >12 turns on  PNP Mosfet to power ESP32.
+  TPL5110 35nA standby mode, wakes every 2 hours, wakes the ATtiny13a and checks a counter.
+  The counter is stored in NV memory (EEPROM) and in my case at >12 turns on  PNP Mosfet to power ESP32.
   
   On Handover, Attiny13a shuts down (2.3mA for 162mS every 2 hours)
   ESP32 turns on another NPN Mosfet to take over from the ATtiny Mosfet and ESP32 self powers 
